@@ -25,3 +25,9 @@ DELETE FROM CLIENTES
 WHERE
     ciudad_clientes = 'Ciudad pruebas 3'
     AND telefono2_clientes = 'NO TIENE'
+
+# Eliminar los proveedores que no tengan productos en stock
+DELETE FROM proveedores
+WHERE NOT EXISTS (
+	SELECT NIP_proveedores FROM productos WHERE NIP_proveedores = proveedores.NIP_proveedores
+)
