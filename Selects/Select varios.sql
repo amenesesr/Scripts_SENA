@@ -49,3 +49,15 @@ SELECT *, MAX(cantidad_detalleventas) FROM detalleventas;
 SELECT * FROM detalleventas
 WHERE consecutivo_ventas = 6
 ORDER BY cantidad_detalleventas DESC;
+
+# Mostrar el id, el nombre y el stock de los productos que no tengan ventas registradas
+SELECT id_productos, nombre_productos, stock_productos From productos
+WHERE NOT EXISTS(
+	SELECT * FROM detalleventas WHERE id_productos = productos.id_productos
+);
+
+# Mostrar el id, el nombre y el stock de los productos que si tengan ventas registradas
+SELECT id_productos, nombre_productos, stock_productos From productos
+WHERE NOT EXISTS(
+	SELECT * FROM detalleventas WHERE id_productos = productos.id_productos
+);
