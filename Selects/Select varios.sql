@@ -67,9 +67,21 @@ WHERE EXISTS(
 # BAJO si el precio es mayor igual a 0 y menor igual a 50000
 # MEDIO si el precio es mayor de 50000 y menor igual a 100000 
 # ALTO para mayores de 100000 
-SELECT nombre_productos, precio_productos,
-CASE 	WHEN precio_productos > 0 and precio_productos <= 50000 THEN 'BAJO'
-		WHEN precio_productos > 50000 and precio_productos <= 100000 THEN 'MEDIO'
-		WHEN precio_productos > 100000 THEN 'ALTO'
-END AS coste_productos
-FROM productos
+SELECT 
+    nombre_productos,
+    precio_productos,
+    CASE
+        WHEN
+            precio_productos > 0
+                AND precio_productos <= 50000
+        THEN
+            'BAJO'
+        WHEN
+            precio_productos > 50000
+                AND precio_productos <= 100000
+        THEN
+            'MEDIO'
+        WHEN precio_productos > 100000 THEN 'ALTO'
+    END AS coste_productos
+FROM
+    productos
