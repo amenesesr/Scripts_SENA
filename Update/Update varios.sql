@@ -40,3 +40,22 @@ WHERE EXISTS (
 # pero igual no reporta ningun error asi que no se nota el cambio, esto seria valido por ejemplo si se 
 # necesitara validar que un dato exista pero en otra tabla diferente a donde se va a realizar el UPDATE 
 # agregando un FROM
+
+# Aumentar el precio de todos los productos un 5%
+use import_tech;
+UPDATE productos
+SET precio_productos = precio_productos + (precio_productos * 0.05);
+
+# Por promocion rebajar un 10% a los productos que tengan un valor superior a $100.000
+UPDATE productos
+SET precio_productos = precio_productos - (precio_productos * 0.10)
+WHERE EXISTS (
+	SELECT precio_prodcutos WHERE precio_productos >= 100000
+);
+
+# Aumentar $10.000 a todos los productos que sean de la categoria 3
+UPDATE productos
+SET precio_productos = precio_productos + 10000
+WHERE EXISTS (
+	SELECT  id_categorias WHERE id_categorias = 3
+);
