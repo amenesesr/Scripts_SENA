@@ -50,7 +50,7 @@ SET precio_productos = precio_productos + (precio_productos * 0.05);
 UPDATE productos
 SET precio_productos = precio_productos - (precio_productos * 0.10)
 WHERE EXISTS (
-	SELECT precio_prodcutos WHERE precio_productos >= 100000
+	SELECT precio_productos WHERE precio_productos >= 100000
 );
 
 # Aumentar $10.000 a todos los productos que sean de la categoria 3
