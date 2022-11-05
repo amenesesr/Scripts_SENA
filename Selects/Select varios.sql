@@ -84,4 +84,13 @@ SELECT
         WHEN precio_productos > 100000 THEN 'ALTO'
     END AS coste_productos
 FROM
-    productos
+    productos;
+    
+# Mostrar las ciudades de los clientes sin datos repetidos
+SELECT DISTINCT ciudad_clientes from clientes;
+
+# Mostrar los codigos de productos que tienen venta registradas sin datos repetidos
+SELECT DISTINCT id_productos from detalleventas;
+
+# Motrar las cedulas de los clientes que tienen ventas registradas sin datos repetidos
+SELECT DISTINCT NIP_clientes from ventas
