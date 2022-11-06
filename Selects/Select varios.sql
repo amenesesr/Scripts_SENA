@@ -93,4 +93,35 @@ SELECT DISTINCT ciudad_clientes from clientes;
 SELECT DISTINCT id_productos from detalleventas;
 
 # Motrar las cedulas de los clientes que tienen ventas registradas sin datos repetidos
-SELECT DISTINCT NIP_clientes from ventas
+SELECT DISTINCT NIP_clientes from ventas;
+
+# Mostrar la cifra total del clientes registrados en nuestra base de datos y que 
+# la columna se llame total_clientes
+SELECT COUNT(NIP_clientes) AS total_clientes FROM clientes;
+
+# Mostrar la cantidad de productos que se tienen en catalogo dentro de la base de datos
+# que la columna tenga el nombre total_productos
+SELECT COUNT(stock_productos) AS total_productos FROM productos;
+
+# Mostrar el promedio del valor de los productos que tenemos a la venta 
+# con el nombre precioPromedio_productos
+SELECT AVG(precio_productos) AS precioPromedio_productos FROM productos;
+
+# Mostrar la cantidad de clientes que han realizado compras sin contar  
+# compras repetidas (hechas por el mismo cliente) con el nombre clienetesQueCompran
+SELECT COUNT(DISTINCT NIP_clientes) AS clienetesQueCompran FROM ventas;
+
+# Mostrar la cantidad de clientes que no han realizado compras
+# con el nombre clientesSinCompras
+SELECT COUNT(DISTINCT NIP_clientes) AS comprasPorClientes FROM clientes
+WHERE NOT EXISTS(
+	SELECT NIP_clientes FROM ventas WHERE NIP_clientes = clientes.NIP_clientes 
+);
+
+# Mostrar el valor total historico de todas las ventas que estan registradas
+# en la base de datos con el nombre VentaTotal
+SELECT SUM(montofinal_ventas) AS ventaTotal FROM ventas;
+
+# Mostrar la cantidad total de todos los productos que tiene el negocio en inventario
+# en la base de datos con el nombre cantidadTotal
+SELECT SUM(stock_productos) AS cantidadTotal FROM productos;
