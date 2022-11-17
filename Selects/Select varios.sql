@@ -72,13 +72,11 @@ SELECT
     precio_productos,
     CASE
         WHEN
-            precio_productos > 0
-                AND precio_productos <= 50000
+            precio_productos BETWEEN 0 AND 50000
         THEN
             'BAJO'
         WHEN
-            precio_productos > 50000
-                AND precio_productos <= 100000
+            precio_productos BETWEEN 50001 AND 100000
         THEN
             'MEDIO'
         WHEN precio_productos > 100000 THEN 'ALTO'
@@ -125,3 +123,22 @@ SELECT SUM(montofinal_ventas) AS ventaTotal FROM ventas;
 # Mostrar la cantidad total de todos los productos que tiene el negocio en inventario
 # en la base de datos con el nombre cantidadTotal
 SELECT SUM(stock_productos) AS cantidadTotal FROM productos;
+
+# Mostrar ciudades con la cantidad de clientes que tiene cada ciudad ordenadas de mayor a menor
+SELECT ciudad_clientes, COUNT(*) AS cantidad
+FROM clientes
+GROUP BY ciudad_clientes
+ORDER BY cantidad DESC;
+
+# Mostrar el nombre, el telefono1 y ciudad de todos los clientes de la ciudad pruebas 4 y ciudad pruebas 1
+SELECT ciudad_clientes, nombre_clientes, telefono1_clientes
+FROM clientes
+WHERE ciudad_clientes IN ("Ciudad pruebas 4", "Ciudad pruebas 1")
+ORDER BY ciudad_clientes ASC;
+
+# Mostrar el nombre, el telefono1 y ciudad de todos los clientes de todas las ciudades menos de la
+# ciudad pruebas 1 en orden de menor mayor
+SELECT ciudad_clientes, nombre_clientes, telefono1_clientes
+FROM clientes
+WHERE ciudad_clientes NOT IN ("Ciudad pruebas 1")
+ORDER BY ciudad_clientes ASC;
