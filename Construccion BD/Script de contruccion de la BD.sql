@@ -43,6 +43,13 @@ FOREIGN KEY (id_categorias)
         ON DELETE RESTRICT
 ) ENGINE=INNODB;
 
+# Se crea la tabla ciudades
+CREATE TABLE IF NOT EXISTS ciudades (
+id_ciudades INT AUTO_INCREMENT,
+nombre_ciudades VARCHAR(50) NOT NULL,
+PRIMARY KEY (id_ciudades) 
+) ENGINE=INNODB;
+
 # Se crea la tabla clientes
 CREATE TABLE IF NOT EXISTS clientes (
 NIP_clientes BIGINT,
@@ -50,11 +57,16 @@ nombre_clientes VARCHAR(50) NOT NULL,
 telefono1_clientes VARCHAR(15) NOT NULL,
 telefono2_clientes VARCHAR(15) NOT NULL,
 telefono3_clientes VARCHAR(15) NOT NULL,  
-ciudad_clientes VARCHAR(50) NOT NULL,
+id_ciudades INT NOT NULL,
 comuna_clientes INT NOT NULL,
 calle_clientes VARCHAR(10) NOT NULL,
 numero_clientes VARCHAR(10) NOT NULL,
 PRIMARY KEY (NIP_clientes)
+INDEX ciudad_idx (id_ciudades),
+FOREIGN KEY (id_ciudades )
+	REFERENCES ciudades(id_ciudades )
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT,
 ) ENGINE=INNODB;
 
 # Se crea la tabla ventas

@@ -9,6 +9,9 @@ ALTER TABLE productos CHANGE coste_productos nueva_columna BIGINT;
 # Eliminar la columna coste_productos de la tabla productos
 ALTER TABLE productos DROP coste_productos;
 
+# Cambiar el tamaño de la columna coste_productos de 10 a 15 caracteres
+ALTER TABLE productos MODIFY COLUMN coste_productos VARCHAR(15);
+
 # Agregar una columna a la tabla productos llamada coste_productos del tipo VARCHAR(10) 
 # y llenarla automaticamente dependiendo el valor del producto clasificarlo entre:
 # BAJO si el precio es mayor igual a 0 y menor igual a 50000
