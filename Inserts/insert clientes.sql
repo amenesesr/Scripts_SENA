@@ -88,7 +88,7 @@ WHERE NOT EXISTS (
 
 INSERT INTO clientes (NIP_clientes, nombre_clientes, telefono1_clientes, telefono2_clientes, telefono3_clientes, id_ciudades, comuna_clientes, calle_clientes, numero_clientes)
 SELECT * FROM (SELECT 	8018422143 AS NIP_clientes,
-						"juan carlos avila cobos" AS nombre_clientes,
+						"juan carlos de la torre garcia" AS nombre_clientes,
                         "35842" AS telefono1_clientes,
                         "36295" AS telefono2_clientes, 
                         "26770" AS telefono3_clientes, 
@@ -187,7 +187,7 @@ WHERE NOT EXISTS (
 
 INSERT INTO clientes (NIP_clientes, nombre_clientes, telefono1_clientes, telefono2_clientes, telefono3_clientes, id_ciudades, comuna_clientes, calle_clientes, numero_clientes)
 SELECT * FROM (SELECT 	5065300550 AS NIP_clientes,
-						"Cliente de pruebas 14" AS nombre_clientes,
+						"miguel angel de la hoz silva" AS nombre_clientes,
                         "32074" AS telefono1_clientes, 
                         "0" AS telefono2_clientes, 
                         "0" AS telefono3_clientes, 

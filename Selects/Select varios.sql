@@ -17,6 +17,14 @@ WHERE NIP_proveedores = 741963852;
 SELECT * FROM categorias
 WHERE id_categorias = 4;
 
+# Consultar los nombre de los clientes que empiezen con la letra J
+SELECT nombre_clientes FROM clientes
+WHERE nombre_clientes LIKE "j%";
+
+# Consultar los nombre de los clientes que contengan las letras AR
+SELECT nombre_clientes FROM clientes
+WHERE nombre_clientes LIKE "%ar%";
+
 # Mostrar el nombre de los productos que tienen un stock mayor a 50 productos y su cantidad actual
 SELECT nombre_productos, stock_productos FROM productos
 WHERE stock_productos >= 50;
@@ -142,3 +150,19 @@ SELECT ciudad_clientes, nombre_clientes, telefono1_clientes
 FROM clientes
 WHERE ciudad_clientes NOT IN ("Ciudad pruebas 1")
 ORDER BY ciudad_clientes ASC;
+
+# Realizar una consulta que me muestre la cedula del cliente en una columna y otra columna
+# llamada cliente_ciudad que muestre el nombre del cliente y la ciudad en la que vive
+SELECT cli.NIP_clientes, CONCAT (cli.nombre_clientes, ' ', ciu.nombre_ciudades) as 'cliente_ciudad'
+FROM ciudades ciu, clientes cli
+WHERE cli.id_ciudades = ciu.id_ciudades;
+
+# Crear una consulta que muestre el nombre del cliente en una columna y en otra que se llame direccion
+# y que contenga la ciudad, la comuna, la calle y el numero de la tabla clientes
+SELECT clientes.nombre_clientes, CONCAT(ciudades.nombre_ciudades, ' Comuna ', 
+										clientes.comuna_clientes, ' Calle ', 
+										clientes.calle_clientes, ' # ',
+                                        clientes.numero_clientes ) AS direccion
+FROM ciudades, clientes
+WHERE clientes.id_ciudades = ciudades.id_ciudades;
+
