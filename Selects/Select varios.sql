@@ -5,6 +5,7 @@ USE Import_tech;
 SELECT * FROM proveedores;
 SELECT * FROM categorias;
 SELECT * FROM productos;
+SELECT * FROM cuidades;
 SELECT * FROM clientes;
 SELECT * FROM ventas;
 SELECT * FROM detalleventas;
@@ -165,3 +166,28 @@ SELECT clientes.nombre_clientes, CONCAT(ciudades.nombre_ciudades, ' Comuna ',
                                         clientes.numero_clientes ) AS direccion
 FROM ciudades, clientes
 WHERE clientes.id_ciudades = ciudades.id_ciudades;
+
+# Realizar una consulta que me muestre la cedula del cliente en una columna y otra columna
+# llamada cliente_ciudad que muestre el nombre del cliente y la ciudad en la que vive Sin usar 
+# la clausula WHERE y usando un INNER JOIN
+SELECT cli.NIP_clientes, CONCAT (cli.nombre_clientes, ' ', ciu.nombre_ciudades) as 'cliente_ciudad'
+FROM clientes cli INNER JOIN  ciudades ciu 
+ON cli.id_ciudades = ciu.id_ciudades;
+
+# Crear una consulta que muestre el nombre del cliente en una columna y en otra que se llame direccion
+# y que contenga la ciudad, la comuna, la calle y el numero de la tabla clientes sin usar la clausula WHERE
+# y usando un INNER JOIN
+SELECT clientes.nombre_clientes, CONCAT(ciudades.nombre_ciudades, ' Comuna ', 
+										clientes.comuna_clientes, ' Calle ', 
+										clientes.calle_clientes, ' # ',
+                                        clientes.numero_clientes ) AS direccion
+FROM ciudades INNER JOIN clientes
+ON clientes.id_ciudades = ciudades.id_ciudades;
+
+# Unir dos consultas una que me muestre el cliente con el id de la ciudad en la que esta
+# y despues que me consulte el id y el nombre de la ciudad de la tabla ciudades
+SELECT nombre_clientes, id_ciudades FROM clientes
+WHERE id_ciudades = 1 OR id_ciudades = 3 OR id_ciudades = 7
+UNION
+SELECT id_ciudades, nombre_ciudades FROM ciudades
+WHERE id_ciudades = 1 OR id_ciudades = 3 OR id_ciudades = 7
