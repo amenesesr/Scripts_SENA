@@ -165,4 +165,3 @@ SELECT clientes.nombre_clientes, CONCAT(ciudades.nombre_ciudades, ' Comuna ',
                                         clientes.numero_clientes ) AS direccion
 FROM ciudades, clientes
 WHERE clientes.id_ciudades = ciudades.id_ciudades;
-
