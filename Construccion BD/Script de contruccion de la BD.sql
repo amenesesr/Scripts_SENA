@@ -61,12 +61,12 @@ id_ciudades INT NOT NULL,
 comuna_clientes INT NOT NULL,
 calle_clientes VARCHAR(10) NOT NULL,
 numero_clientes VARCHAR(10) NOT NULL,
-PRIMARY KEY (NIP_clientes)
+PRIMARY KEY (NIP_clientes),
 INDEX ciudad_idx (id_ciudades),
 FOREIGN KEY (id_ciudades )
 	REFERENCES ciudades(id_ciudades )
         ON UPDATE CASCADE
-        ON DELETE RESTRICT,
+        ON DELETE RESTRICT
 ) ENGINE=INNODB;
 
 # Se crea la tabla ventas

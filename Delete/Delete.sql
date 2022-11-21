@@ -20,10 +20,10 @@ WHERE consecutivo_ventas = 1;
 DELETE FROM productos
 WHERE stock_productos <= 50;
 
-# Eliminar los clientes de la ciudad "Ciudad pruebas 3" y que el telefono2 sea "NO TIENE"
+# Eliminar los clientes de la ciudad con ID 3 y que el telefono2 sea "NO TIENE"
 DELETE FROM CLIENTES 
 WHERE
-    ciudad_clientes = 'Ciudad pruebas 3'
+    id_ciudades = '3'
     AND telefono2_clientes = 'NO TIENE';
 
 # Eliminar los proveedores que no tengan productos en stock

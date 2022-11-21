@@ -44,5 +44,24 @@ WHERE NOT EXISTS (
     SELECT nombre_ciudades FROM ciudades WHERE nombre_ciudades = "Cartagena"
 ) LIMIT 1;
 
+INSERT INTO ciudades (nombre_ciudades)
+SELECT * FROM (SELECT "Manizales" AS nombre_ciudades) AS tmp
+WHERE NOT EXISTS (
+    SELECT nombre_ciudades FROM ciudades WHERE nombre_ciudades = "Manizales"
+) LIMIT 1;
+
+INSERT INTO ciudades (nombre_ciudades)
+SELECT * FROM (SELECT "Pereira" AS nombre_ciudades) AS tmp
+WHERE NOT EXISTS (
+    SELECT nombre_ciudades FROM ciudades WHERE nombre_ciudades = "Pereira"
+) LIMIT 1;
+
+
+INSERT INTO ciudades (nombre_ciudades)
+SELECT * FROM (SELECT "Amazonas" AS nombre_ciudades) AS tmp
+WHERE NOT EXISTS (
+    SELECT nombre_ciudades FROM ciudades WHERE nombre_ciudades = "Amazonas"
+) LIMIT 1;
+
 # Se muestran todos los datos de la tabla categorias para verificar su contenido.
 SELECT * FROM ciudades;

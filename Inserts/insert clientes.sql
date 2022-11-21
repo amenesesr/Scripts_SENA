@@ -297,5 +297,147 @@ WHERE NOT EXISTS (
     SELECT NIP_clientes FROM clientes WHERE NIP_clientes = 3225687287 
 ) LIMIT 1;
 
+#=============================
+
+INSERT INTO clientes (NIP_clientes, nombre_clientes, telefono1_clientes, telefono2_clientes, telefono3_clientes, id_ciudades, comuna_clientes, calle_clientes, numero_clientes)
+SELECT * FROM (SELECT 	1553523446 AS NIP_clientes,
+						"rene dominguez santana" AS nombre_clientes, 
+                        "31391" AS telefono1_clientes, 
+                        "0" AS telefono2_clientes, 
+                        "12092" AS telefono3_clientes, 
+                        7 AS id_ciudades, 
+                        "25" AS comuna_clientes, 
+                        "13" AS calle_clientes, 
+                        "65-40" AS numero_clientes) AS tmp
+WHERE NOT EXISTS (
+    SELECT NIP_clientes FROM clientes WHERE NIP_clientes = 1553523446 
+) LIMIT 1;
+
+INSERT INTO clientes (NIP_clientes, nombre_clientes, telefono1_clientes, telefono2_clientes, telefono3_clientes, id_ciudades, comuna_clientes, calle_clientes, numero_clientes)
+SELECT * FROM (SELECT 	4994548265 AS NIP_clientes,
+						"cindy lorena echeverri quintana" AS nombre_clientes, 
+                        "41759" AS telefono1_clientes, 
+                        "0" AS telefono2_clientes, 
+                        "0" AS telefono3_clientes, 
+                        6 AS id_ciudades, 
+                        "3" AS comuna_clientes, 
+                        "4" AS calle_clientes, 
+                        "19-40" AS numero_clientes) AS tmp
+WHERE NOT EXISTS (
+    SELECT NIP_clientes FROM clientes WHERE NIP_clientes = 4994548265
+) LIMIT 1;
+
+INSERT INTO clientes (NIP_clientes, nombre_clientes, telefono1_clientes, telefono2_clientes, telefono3_clientes, id_ciudades, comuna_clientes, calle_clientes, numero_clientes)
+SELECT * FROM (SELECT 	6123076268 AS NIP_clientes,
+						"kevin eduardo echeverry meneses" AS nombre_clientes, 
+                        "93991" AS telefono1_clientes, 
+                        "17242" AS telefono2_clientes, 
+                        "88151" AS telefono3_clientes, 
+                        5 AS id_ciudades, 
+                        "6" AS comuna_clientes, 
+                        "87" AS calle_clientes, 
+                        "11-14" AS numero_clientes) AS tmp
+WHERE NOT EXISTS (
+    SELECT NIP_clientes FROM clientes WHERE NIP_clientes = 6123076268
+) LIMIT 1;
+
+INSERT INTO clientes (NIP_clientes, nombre_clientes, telefono1_clientes, telefono2_clientes, telefono3_clientes, id_ciudades, comuna_clientes, calle_clientes, numero_clientes)
+SELECT * FROM (SELECT 	5347245778 AS NIP_clientes,
+						"nikolai steven fandiño lopez" AS nombre_clientes, 
+                        "63137" AS telefono1_clientes, 
+                        "38289" AS telefono2_clientes, 
+                        "0" AS telefono3_clientes, 
+                        4 AS id_ciudades, 
+                        "63" AS comuna_clientes, 
+                        "28" AS calle_clientes, 
+                        "1-40" AS numero_clientes) AS tmp
+WHERE NOT EXISTS (
+    SELECT NIP_clientes FROM clientes WHERE NIP_clientes = 5347245778 
+) LIMIT 1;
+
+INSERT INTO clientes (NIP_clientes, nombre_clientes, telefono1_clientes, telefono2_clientes, telefono3_clientes, id_ciudades, comuna_clientes, calle_clientes, numero_clientes)
+SELECT * FROM (SELECT 	1892019558 AS NIP_clientes,
+						"leonardo amaury fernandez rengifo" AS nombre_clientes, 
+                        "87949" AS telefono1_clientes, 
+                        "19555" AS telefono2_clientes, 
+                        "81501" AS telefono3_clientes, 
+                        3 AS id_ciudades, 
+                        "36" AS comuna_clientes, 
+                        "83" AS calle_clientes, 
+                        "31-34" AS numero_clientes) AS tmp
+WHERE NOT EXISTS (
+    SELECT NIP_clientes FROM clientes WHERE NIP_clientes = 1892019558 
+) LIMIT 1;
+
+INSERT INTO clientes (NIP_clientes, nombre_clientes, telefono1_clientes, telefono2_clientes, telefono3_clientes, id_ciudades, comuna_clientes, calle_clientes, numero_clientes)
+SELECT * FROM (SELECT 	9540254639 AS NIP_clientes,
+						"yudy arleny fontecha agudelo" AS nombre_clientes, 
+                        "25909" AS telefono1_clientes, 
+                        "58864" AS telefono2_clientes, 
+                        "0" AS telefono3_clientes, 
+                        2 AS id_ciudades, 
+                        "22" AS comuna_clientes, 
+                        "11" AS calle_clientes, 
+                        "33-44" AS numero_clientes) AS tmp
+WHERE NOT EXISTS (
+    SELECT NIP_clientes FROM clientes WHERE NIP_clientes = 9540254639 
+) LIMIT 1;
+
+INSERT INTO clientes (NIP_clientes, nombre_clientes, telefono1_clientes, telefono2_clientes, telefono3_clientes, id_ciudades, comuna_clientes, calle_clientes, numero_clientes)
+SELECT * FROM (SELECT 	2806565891 AS NIP_clientes,
+						"javier gaitan hernandez" AS nombre_clientes, 
+                        "85277" AS telefono1_clientes, 
+                        "71938" AS telefono2_clientes, 
+                        "0" AS telefono3_clientes, 
+                        1 AS id_ciudades, 
+                        "95" AS comuna_clientes, 
+                        "4" AS calle_clientes, 
+                        "10-40" AS numero_clientes) AS tmp
+WHERE NOT EXISTS (
+    SELECT NIP_clientes FROM clientes WHERE NIP_clientes = 2806565891 
+) LIMIT 1;
+
+INSERT INTO clientes (NIP_clientes, nombre_clientes, telefono1_clientes, telefono2_clientes, telefono3_clientes, id_ciudades, comuna_clientes, calle_clientes, numero_clientes)
+SELECT * FROM (SELECT 	4508194109 AS NIP_clientes,
+						"andres felipe galvis camacho" AS nombre_clientes, 
+                        "11270" AS telefono1_clientes, 
+                        "98381" AS telefono2_clientes, 
+                        "0" AS telefono3_clientes, 
+                        7 AS id_ciudades, 
+                        "2" AS comuna_clientes, 
+                        "3" AS calle_clientes, 
+                        "41-45" AS numero_clientes) AS tmp
+WHERE NOT EXISTS (
+    SELECT NIP_clientes FROM clientes WHERE NIP_clientes = 4508194109  
+) LIMIT 1;
+
+INSERT INTO clientes (NIP_clientes, nombre_clientes, telefono1_clientes, telefono2_clientes, telefono3_clientes, id_ciudades, comuna_clientes, calle_clientes, numero_clientes)
+SELECT * FROM (SELECT 	1061787715 AS NIP_clientes,
+						"edgardo garcia ocampo" AS nombre_clientes, 
+                        "67854" AS telefono1_clientes, 
+                        "0" AS telefono2_clientes, 
+                        "0" AS telefono3_clientes, 
+                        6 AS id_ciudades, 
+                        "60" AS comuna_clientes, 
+                        "18" AS calle_clientes, 
+                        "11-24" AS numero_clientes) AS tmp
+WHERE NOT EXISTS (
+    SELECT NIP_clientes FROM clientes WHERE NIP_clientes = 1061787715 
+) LIMIT 1;
+
+INSERT INTO clientes (NIP_clientes, nombre_clientes, telefono1_clientes, telefono2_clientes, telefono3_clientes, id_ciudades, comuna_clientes, calle_clientes, numero_clientes)
+SELECT * FROM (SELECT 	5071818141 AS NIP_clientes,
+						"santiago alberto giraldo escobar" AS nombre_clientes, 
+                        "80911" AS telefono1_clientes, 
+                        "59498" AS telefono2_clientes, 
+                        "28216" AS telefono3_clientes, 
+                        5 AS id_ciudades, 
+                        "8" AS comuna_clientes, 
+                        "58" AS calle_clientes, 
+                        "12-44" AS numero_clientes) AS tmp
+WHERE NOT EXISTS (
+    SELECT NIP_clientes FROM clientes WHERE NIP_clientes = 5071818141 
+) LIMIT 1;
+
 #Se muestran todos los datos de la tabla clientes para verificar su contenido.
 SELECT * FROM clientes;

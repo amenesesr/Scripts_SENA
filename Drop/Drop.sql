@@ -3,6 +3,7 @@ DROP TABLE IF EXISTS detalleventas;
 DROP TABLE IF EXISTS ventas;
 DROP TABLE IF EXISTS clientes;
 DROP TABLE IF EXISTS productos;
+DROP TABLE IF EXISTS ciudades;
 DROP TABLE IF EXISTS categorias;
 DROP TABLE IF EXISTS proveedores;
 

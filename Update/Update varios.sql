@@ -22,11 +22,11 @@ WHERE EXISTS (
 	SELECT id_categorias WHERE id_categorias = 2
 ) LIMIT 1;
 
-# Actualizar varios registros de la tabla clientes (cambiar la ciudad pruebas 5 por NUEVA CIUDAD 5)
+# Actualizar varios registros de la tabla clientes (cambiar el id de la ciudad 5 por 7)
 UPDATE clientes
-SET ciudad_clientes = "NUEVA CIUDAD 5"
+SET id_ciudades = 5
 WHERE EXISTS (
-	SELECT ciudad_clientes WHERE ciudad_clientes = "Ciudad pruebas 5"
+	SELECT id_ciudades WHERE ciudad_clientes = 7
 ) LIMIT 1;
 
 # Actualizar varios registros de la tabla clientes (cambiar el 0 en el telefono2_clientes por NO TIENE)
@@ -42,7 +42,6 @@ WHERE EXISTS (
 # agregando un FROM
 
 # Aumentar el precio de todos los productos un 5%
-use import_tech;
 UPDATE productos
 SET precio_productos = precio_productos + (precio_productos * 0.05);
 
