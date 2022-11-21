@@ -109,5 +109,6 @@ DESCRIBE proveedores;
 DESCRIBE categorias;
 DESCRIBE productos;
 DESCRIBE clientes;
+DESCRIBE ciudades;
 DESCRIBE ventas;
 DESCRIBE detalleventas; 

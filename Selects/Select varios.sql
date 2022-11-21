@@ -12,7 +12,7 @@ SELECT * FROM detalleventas;
 
 # Mostrar el nombre y el telefono de un proveedor usando el NIP
 SELECT NIP_proveedores, nombre_proveedores, telefono_proveedores FROM proveedores
-WHERE NIP_proveedores = 741963852;
+WHERE NIP_proveedores = 333666999;
 
 #Mostrar todos los datos de la categoria usando el id
 SELECT * FROM categorias
@@ -34,13 +34,13 @@ WHERE stock_productos >= 50;
 SELECT nombre_productos, precio_productos FROM productos
 WHERE precio_productos < 100000;
 
-# Mostrar los clientes que viven en la "ciudad pruebas 1" o "la ciudad pruebas 5"
+# Mostrar los clientes que viven en la ciudad con id 5 o 2
 SELECT * FROM clientes
-WHERE ciudad_clientes = "ciudad pruebas 1" OR ciudad_clientes = "ciudad pruebas 5";
+WHERE ciudad_clientes = "2" OR ciudad_clientes = "5";
 
-# Mostrar todos los clientes que no vivan en la "ciudad pruebas 4" o en la "ciudad pruebas 2"
+# Mostrar todos los clientes que no vivan en las ciudades con id 3 o 6
 SELECT * FROM clientes
-WHERE ciudad_clientes <> "ciudad pruebas 4" AND ciudad_clientes <> "ciudad pruebas 2";
+WHERE ciudad_clientes <> "6" AND ciudad_clientes <> "3";
 
 # Mostrar las 5 venta mas altas de todas en orden de mayor a menor
 SELECT * FROM ventas
@@ -94,7 +94,7 @@ FROM
     productos;
     
 # Mostrar las ciudades de los clientes sin datos repetidos
-SELECT DISTINCT ciudad_clientes from clientes;
+SELECT DISTINCT id_ciudades from clientes;
 
 # Mostrar los codigos de productos que tienen venta registradas sin datos repetidos
 SELECT DISTINCT id_productos from detalleventas;

@@ -8,9 +8,9 @@ DELETE FROM detalleventas;
 DELETE FROM PRODUCTOS
 WHERE id_categorias = 3;
 
-# Eliminar todos los clientes de la tabla clientes que sean de "ciudad pruebas 4"
+# Eliminar todos los clientes de la tabla clientes que sean de la ciudad con id 4
 DELETE FROM clientes
-WHERE ciudad_clientes = "ciudad pruebas 4";
+WHERE id_ciudades = 4;
 
 # Eliminar la venta con consecutivo numero "1"
 DELETE FROM ventas
