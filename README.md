@@ -15,7 +15,7 @@ Mi base de datos tiene la estructura:
 - categorias: id_categorias , nombre, descripcion
 - productos: id_productos, nombre, precio, stock, NIP_proveedores, id_categorias
 - ciudades: id_ciudades, nombre
-- clientes: NIP_clientes, nombre, telefono1, telefono2, telefono3, id_ciudades, comuna_clientes, calle_clientes, numero_clientes
+- clientes: NIP_clientes, nombre, telefono1, telefono2, telefono3, id_ciudades, comunas, calle, numero
 - ventas: consecutivo_ventas, fechahora, descuento, montofinal, NIP_clientes
 - detalleventas: id_detalleventas, cantidad, valorventa, id_productos, consecutivo_ventas
 
