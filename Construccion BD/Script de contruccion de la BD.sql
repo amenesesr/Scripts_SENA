@@ -25,7 +25,7 @@ PRIMARY KEY (id_categorias)
 # Se crea la tabla productos
 CREATE TABLE IF NOT EXISTS productos (
 id_productos BIGINT AUTO_INCREMENT,
-nombre_productos VARCHAR(50) NOT NULL,
+nombre_productos VARCHAR(255) NOT NULL,
 precio_productos INT NOT NULL,  
 stock_productos INT NOT NULL,
 NIP_proveedores BIGINT NOT NULL,
