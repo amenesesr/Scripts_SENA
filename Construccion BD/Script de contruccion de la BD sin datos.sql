@@ -31,6 +31,23 @@ stock_productos INT NOT NULL,
 NIP_proveedores BIGINT NOT NULL,
 id_categorias BIGINT NOT NULL,
 PRIMARY KEY (id_productos),
+coste_productos VARCHAR(10) AS
+(CASE
+	WHEN precio_productos > 0 AND precio_productos <= 50000
+		THEN 'BAJO'
+	WHEN precio_productos > 50000 AND precio_productos <= 100000
+        THEN 'MEDIO'
+	WHEN precio_productos > 100000 
+		THEN 'ALTO'
+END),
+alarma_productos VARCHAR(10) AS
+(CASE
+	WHEN stock_productos <= 10
+		THEN 'ALTA'
+	WHEN stock_productos > 10 AND stock_productos <= 30
+        THEN 'MEDIA'
+	ELSE 'BAJA'
+END),
 INDEX prov_idx (NIP_proveedores),
 FOREIGN KEY (NIP_proveedores)
 	REFERENCES proveedores(NIP_proveedores)

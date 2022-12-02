@@ -5,7 +5,7 @@ USE Import_tech;
 SELECT * FROM proveedores;
 SELECT * FROM categorias;
 SELECT * FROM productos;
-SELECT * FROM cuidades;
+SELECT * FROM ciudades;
 SELECT * FROM clientes;
 SELECT * FROM ventas;
 SELECT * FROM detalleventas;
@@ -36,11 +36,11 @@ WHERE precio_productos < 100000;
 
 # Mostrar los clientes que viven en la ciudad con id 5 o 2
 SELECT * FROM clientes
-WHERE ciudad_clientes = "2" OR ciudad_clientes = "5";
+WHERE id_ciudades = 2 OR id_ciudades = 5;
 
 # Mostrar todos los clientes que no vivan en las ciudades con id 3 o 6
 SELECT * FROM clientes
-WHERE ciudad_clientes <> "6" AND ciudad_clientes <> "3";
+WHERE id_ciudades <> 6 AND id_ciudades <> 3;
 
 # Mostrar las 5 venta mas altas de todas en orden de mayor a menor
 SELECT * FROM ventas
@@ -51,12 +51,12 @@ LIMIT 5;
 SELECT * FROM ventas
 WHERE descuento_ventas = 0;
 
-# Mostrar el producto mas vendidos
-SELECT *, MAX(cantidad_detalleventas) FROM detalleventas;
+# Mostrar el producto mas vendidos en una sola factura (esto hay que revisarlo)
+SELECT *, MAX(cantidad_detalleventas) AS "productos vendidos" FROM detalleventas;
 
-# Mostrar los productos vendidos en la factura numero 6 y que se ordenen por la cantidad de productos del mas vendido al menos vendido
+# Mostrar los productos vendidos en la factura numero 15 y que se ordenen por la cantidad de productos del mas vendido al menos vendido
 SELECT * FROM detalleventas
-WHERE consecutivo_ventas = 6
+WHERE consecutivo_ventas = 15
 ORDER BY cantidad_detalleventas DESC;
 
 # Mostrar el id, el nombre y el stock de los productos que no tengan ventas registradas
@@ -119,8 +119,8 @@ SELECT AVG(precio_productos) AS precioPromedio_productos FROM productos;
 SELECT COUNT(DISTINCT NIP_clientes) AS clienetesQueCompran FROM ventas;
 
 # Mostrar la cantidad de clientes que no han realizado compras
-# con el nombre clientesSinCompras
-SELECT COUNT(DISTINCT NIP_clientes) AS comprasPorClientes FROM clientes
+# con el nombre "Total de clientes sin compras"
+SELECT COUNT(DISTINCT NIP_clientes) AS "Total de clientes sin compras" FROM clientes
 WHERE NOT EXISTS(
 	SELECT NIP_clientes FROM ventas WHERE NIP_clientes = clientes.NIP_clientes 
 );
@@ -134,23 +134,23 @@ SELECT SUM(montofinal_ventas) AS ventaTotal FROM ventas;
 SELECT SUM(stock_productos) AS cantidadTotal FROM productos;
 
 # Mostrar ciudades con la cantidad de clientes que tiene cada ciudad ordenadas de mayor a menor
-SELECT ciudad_clientes, COUNT(*) AS cantidad
+SELECT id_ciudades, COUNT(*) AS cantidad
 FROM clientes
-GROUP BY ciudad_clientes
+GROUP BY id_ciudades
 ORDER BY cantidad DESC;
 
 # Mostrar el nombre, el telefono1 y ciudad de todos los clientes de la ciudad pruebas 4 y ciudad pruebas 1
-SELECT ciudad_clientes, nombre_clientes, telefono1_clientes
+SELECT id_ciudades, nombre_clientes, telefono1_clientes
 FROM clientes
-WHERE ciudad_clientes IN ("Ciudad pruebas 4", "Ciudad pruebas 1")
-ORDER BY ciudad_clientes ASC;
+WHERE id_ciudades IN (4, 1)
+ORDER BY id_ciudades ASC;
 
 # Mostrar el nombre, el telefono1 y ciudad de todos los clientes de todas las ciudades menos de la
 # ciudad pruebas 1 en orden de menor mayor
-SELECT ciudad_clientes, nombre_clientes, telefono1_clientes
+SELECT id_ciudades, nombre_clientes, telefono1_clientes
 FROM clientes
-WHERE ciudad_clientes NOT IN ("Ciudad pruebas 1")
-ORDER BY ciudad_clientes ASC;
+WHERE id_ciudades NOT IN (1)
+ORDER BY id_ciudades ASC;
 
 # Realizar una consulta que me muestre la cedula del cliente en una columna y otra columna
 # llamada cliente_ciudad que muestre el nombre del cliente y la ciudad en la que vive

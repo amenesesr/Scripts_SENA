@@ -2,13 +2,6 @@ USE import_tech;
 # Agregar una columna a la tabla productos llamada coste_productos del tipo VARCHAR(10)
 ALTER TABLE productos ADD COLUMN coste_productos VARCHAR(10);
 
-# Cambiar el nombre de la columna coste_productos colocandole el nombre nueva_columna 
-# y cambiando el tipo a BIGINT
-ALTER TABLE productos CHANGE coste_productos nueva_columna BIGINT;
-
-# Eliminar la columna coste_productos de la tabla productos
-ALTER TABLE productos DROP coste_productos;
-
 # Cambiar el tamaño de la columna coste_productos de 10 a 15 caracteres
 ALTER TABLE productos MODIFY COLUMN coste_productos VARCHAR(15);
 
@@ -40,3 +33,10 @@ ALTER TABLE productos ADD COLUMN alarma_productos VARCHAR(10) AS
         THEN 'MEDIA'
 	ELSE 'BAJA'
 END);
+
+# Cambiar el nombre de la columna coste_productos colocandole el nombre nueva_columna 
+# y cambiando el tipo a BIGINT
+ALTER TABLE productos CHANGE coste_productos nueva_columna BIGINT;
+
+# Eliminar la columna coste_productos de la tabla productos
+ALTER TABLE productos DROP coste_productos;

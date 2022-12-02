@@ -24,16 +24,6 @@ WHERE NOT EXISTS (
 ) LIMIT 1;
 
 INSERT INTO productos (nombre_productos, precio_productos, stock_productos, NIP_proveedores, id_categorias)
-SELECT * FROM (SELECT 	"Microsoft Office 2021" AS nombre_productos, 
-						"200000" AS precio_productos,
-                        "50" AS stock_productos,
-                        "333666999" AS NIP_proveedores,
-                        "1" AS id_categorias) AS tmp
-WHERE NOT EXISTS (
-    SELECT nombre_productos FROM productos WHERE nombre_productos = "Microsoft Office 2021"
-) LIMIT 1;
-
-INSERT INTO productos (nombre_productos, precio_productos, stock_productos, NIP_proveedores, id_categorias)
 SELECT * FROM (SELECT 	"Adobe PhotoShop" AS nombre_productos, 
 						"180000" AS precio_productos,
                         "30" AS stock_productos,
@@ -266,7 +256,7 @@ WHERE NOT EXISTS (
 
 INSERT INTO productos (nombre_productos, precio_productos, stock_productos, NIP_proveedores, id_categorias)
 SELECT * FROM (SELECT 	"Disco duro interno Toshiba MQ04ABF Series MQ04ABF100 1TB" AS nombre_productos, 
-						"120000" AS precio_productos,
+						"145000" AS precio_productos,
                         "50" AS stock_productos,
                         "554321077" AS NIP_proveedores,
                         "6" AS id_categorias) AS tmp
@@ -326,7 +316,7 @@ WHERE NOT EXISTS (
 
 INSERT INTO productos (nombre_productos, precio_productos, stock_productos, NIP_proveedores, id_categorias)
 SELECT * FROM (SELECT 	"Memoria RAM XLR8 gamer color negro/rojo 8GB 1 PNY MD8GD43200XR" AS nombre_productos, 
-						"139500" AS precio_productos,
+						"145500" AS precio_productos,
                         "27" AS stock_productos,
                         "119922883" AS NIP_proveedores,
                         "6" AS id_categorias) AS tmp
@@ -346,7 +336,7 @@ WHERE NOT EXISTS (
 
 INSERT INTO productos (nombre_productos, precio_productos, stock_productos, NIP_proveedores, id_categorias)
 SELECT * FROM (SELECT 	"Memoria RAM color negro 8GB 1 Yongxinsheng DDR31600D3C11/8G" AS nombre_productos, 
-						"149500" AS precio_productos,
+						"163500" AS precio_productos,
                         "31" AS stock_productos,
                         "333666999" AS NIP_proveedores,
                         "6" AS id_categorias) AS tmp
@@ -386,7 +376,7 @@ WHERE NOT EXISTS (
 
 INSERT INTO productos (nombre_productos, precio_productos, stock_productos, NIP_proveedores, id_categorias)
 SELECT * FROM (SELECT 	"Fuente De Poder Atx 750wa 24 Pin Unitec Para Pc Torre Equipo" AS nombre_productos, 
-						"268000" AS precio_productos,
+						"38500" AS precio_productos,
                         "35" AS stock_productos,
                         "333666999" AS NIP_proveedores,
                         "6" AS id_categorias) AS tmp
@@ -452,16 +442,6 @@ SELECT * FROM (SELECT 	"Tp-link, Tarjeta Usb Wifi Alta Ganancia 300mbps, Tl-wn82
                         "7" AS id_categorias) AS tmp
 WHERE NOT EXISTS (
     SELECT nombre_productos FROM productos WHERE nombre_productos = "Tp-link, Tarjeta Usb Wifi Alta Ganancia 300mbps, Tl-wn822n"
-) LIMIT 1;
-
-INSERT INTO productos (nombre_productos, precio_productos, stock_productos, NIP_proveedores, id_categorias)
-SELECT * FROM (SELECT 	"Tarjeta Pc-e Lan Rj45 Pci Express Adaptador De Red" AS nombre_productos, 
-						"25500" AS precio_productos,
-                        "4" AS stock_productos,
-                        "212223242" AS NIP_proveedores,
-                        "7" AS id_categorias) AS tmp
-WHERE NOT EXISTS (
-    SELECT nombre_productos FROM productos WHERE nombre_productos = "Tarjeta Pc-e Lan Rj45 Pci Express Adaptador De Red"
 ) LIMIT 1;
 
 INSERT INTO productos (nombre_productos, precio_productos, stock_productos, NIP_proveedores, id_categorias)
