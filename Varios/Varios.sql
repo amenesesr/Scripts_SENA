@@ -24,11 +24,8 @@ FROM consolidadoVentas;
 
 # Cambiar el nombre de la tabla categorias a categorias_productos
 USE import_tech;
-RENAME TABLE categorias TO categorias_productos
+RENAME TABLE categorias TO categorias_productos;
 
 # Realizar el proceso inverso y dejar la tabla como estaba inicialmente
 USE import_tech;
 RENAME TABLE categorias_productos TO categorias
-
-
-
